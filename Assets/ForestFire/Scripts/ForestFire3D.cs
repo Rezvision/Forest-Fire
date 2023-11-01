@@ -30,6 +30,7 @@ public class ForestFire3D : MonoBehaviour
 
     private Camera gameCamera; // the camera that is players viewport
 
+
     // Awake is a built-in Unity function that is only called once, before the Start function
     private void Awake()
     {
@@ -180,7 +181,7 @@ public class ForestFire3D : MonoBehaviour
                     {
                         xC = UnityEngine.Random.Range(0, 100); // generate a random number between 0 and 100
 
-                        if (xC < 10 * alightNeighbourCells) // the more alight neighbours the greater the probability of catching light
+                        if (xC < 5 * alightNeighbourCells) // the more alight neighbours the greater the probability of catching light
                                                                       // e.g. 1 alight neighbour = 10 * 1 = 10% chance of catching fire, 2 alight neighbours = 10 * 2 = 20% chance of catching fire, etc.
                         {
                             forestFireCellsNextGenStates[xCount, yCount] = ForestFireCell.State.Alight;  // a 10% chance of catching fire
@@ -337,4 +338,5 @@ public class ForestFire3D : MonoBehaviour
             }
         }
     }
+
 }

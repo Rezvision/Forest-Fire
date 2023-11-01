@@ -157,10 +157,11 @@ public class ForestFireCell : MonoBehaviour
     // set cell burnt
     public void SetBurnt()
     {
-        // if the cell has a fire, destroy it
+        // if the cell has a fire, destroy it  [add ash and have reduced damage (nomral damage 10/ ash damage 5]
         if (currentFire != null)
         {
             Destroy(currentFire);
+            //currentFire = Instantiate();//ash 
         }
 
         // if there are leaves active in the hierarchy of this cell, disable them as if they have been burnt 
