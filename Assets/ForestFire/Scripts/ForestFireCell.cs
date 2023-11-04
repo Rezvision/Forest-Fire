@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.VFX;
 
 // class that represents a single cell in the cellular automaton
@@ -17,6 +18,7 @@ public class ForestFireCell : MonoBehaviour
         Alight,
         Rock,
         Burnt,
+        Healthkit,
     }
 
     public int cellFuel; // integer to store the amount of fuel in the cell
@@ -26,6 +28,7 @@ public class ForestFireCell : MonoBehaviour
     public Material groundMaterialGrass;
     public Material groundMaterialRock;
     public Material groundMaterialTree;
+    public Material groundMaterialHealthkit; //new grass material added to make code more clear
     private MeshRenderer groundMeshRenderer; // reference to this cell's mesh renderer, used when changing material
 
     public GameObject treeObject; // reference to tree visual object
@@ -34,6 +37,8 @@ public class ForestFireCell : MonoBehaviour
 
     public GameObject treeFireFVX; // reference to tree fire vfx
     public GameObject grassFireFVX; // reference to grass fire vfx
+
+    public GameObject[] healthKitPrefabs; // Refrences to Health kits 
 
     public GameObject currentFire; // if the cell is on fire, the reference to the fire vfx is stored here
     public GameObject playerCamera; // reference to player camera
@@ -50,9 +55,17 @@ public class ForestFireCell : MonoBehaviour
     // reset anything that was turned on by a different cell 
     private void ResetCell()
     {
-        // turn off the tree and rock objects
+        // turn off the tree and rock objects 
         treeObject.SetActive(false);
         rockObject.SetActive(false);
+
+        // turning off healthkits healthkits
+        for (int i = 0; i < healthKitPrefabs.Length; i++) 
+        {
+
+        healthKitPrefabs[i].SetActive(false);
+        }
+       
 
         // destroy the fire effect if it exists
         if (currentFire != null)
@@ -125,7 +138,32 @@ public class ForestFireCell : MonoBehaviour
         cellState = State.Rock;
         cellFuel = 0;
         groundMeshRenderer.material = groundMaterialRock; // sets the cell material to rock
-        rockObject.SetActive(true); 
+        rockObject.SetActive(true);
+    }
+    // set cell HealthKits 
+    public void SetHealthKit()
+    {
+        if (groundMeshRenderer.sharedMaterial == groundMaterialHealthkit)
+            return;
+
+        // this code below wont run once the healthkit material has been set
+        ResetCell();
+        cellState = State.Healthkit;
+        cellFuel = 0;
+        groundMeshRenderer.material = groundMaterialHealthkit; // sets the cell material to healthkit grass
+        int _randomNumber = Random.Range(0, healthKitPrefabs.Length);
+        healthKitPrefabs[_randomNumber].SetActive(true);
+        //for (int i = 0; i < healthKitPrefabs.Length; i++)
+        //{
+        //    healthKitPrefabs[i].SetActive(true);
+        //    Instantiate(healthKitPrefabs[i], position, Quaternion.identity);
+        //}
+
+        //for (int i = 0; i < healthKitPrefabs.Length; i++)
+        //{
+        //    Instantiate(healthKitPrefabs[i], position, Quaternion.identity);
+        //}
+
     }
 
     // set cell alight
@@ -161,7 +199,9 @@ public class ForestFireCell : MonoBehaviour
         if (currentFire != null)
         {
             Destroy(currentFire);
-            //currentFire = Instantiate();//ash 
+            
+            // 
+            //currentFire = Instantiate(ashPrefab, currentcell.transform.position, Quaternion.identity);//ash 
         }
 
         // if there are leaves active in the hierarchy of this cell, disable them as if they have been burnt 

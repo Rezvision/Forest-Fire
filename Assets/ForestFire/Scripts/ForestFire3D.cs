@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
+
 // class that controls the forest fire cellular automaton
 public class ForestFire3D : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class ForestFire3D : MonoBehaviour
 
     public int rockChance; // the percentage chance a cell is assigned as rock
     public int grassChance; // the percentage chance a cell is assigned as grass
+    public int healthKitChance;
 
     public GameObject cellPrefab; // gameobject prefab used to represent a cell on the grid   
 
@@ -122,6 +124,10 @@ public class ForestFire3D : MonoBehaviour
                     forestFireCells[xCount, yCount].SetGrass();
                     forestFireCells[xCount, yCount].cellFuel = UnityEngine.Random.Range(1, 5);
                 }
+                else if (xC < healthKitChance) // if the random value is less than healthkit chance, assign cell as healthkit material and add healthkit prefab
+                {
+                    forestFireCells[xCount, yCount].SetHealthKit();
+                }
                 else // if the random value is higher than rock and grass chance, assign as tree and set cell fuel
                 {
                     forestFireCells[xCount, yCount].SetTree();
@@ -145,6 +151,10 @@ public class ForestFire3D : MonoBehaviour
 
         // set the middle cell as grass which is where the player is placed
         forestFireCells[20, 20].SetGrass();
+
+        //var float _randnum new rand
+
+       // forestFireCells[20, 20].SetGrass();
     }
 
 
@@ -334,6 +344,10 @@ public class ForestFire3D : MonoBehaviour
                 else if (forestFireCells[xCount, yCount].cellState == ForestFireCell.State.Tree)
                 {
                     forestFireCells[xCount, yCount].SetTree();
+                }
+                else if (forestFireCells[xCount, yCount].cellState == ForestFireCell.State.Healthkit) // adding healthkit state as a cell
+                {
+                    forestFireCells[xCount, yCount].SetHealthKit();
                 }
             }
         }
