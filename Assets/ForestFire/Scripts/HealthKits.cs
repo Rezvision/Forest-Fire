@@ -14,7 +14,8 @@ public class HealthKits : MonoBehaviour
     void Start()
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        healthSound = this.GetComponent<AudioSource>();
+        healthSound = GameObject.FindGameObjectWithTag("Healthkit").GetComponent<AudioSource>();
+            //this.GetComponent<AudioSource>();
         //healthKit = GameObject.FindGameObjectsWithTag("Healthkit");
     }
 
@@ -28,6 +29,7 @@ public class HealthKits : MonoBehaviour
         if (other.tag == "Player")
         {
             healthSound.Play();
+            Debug.Log("sound playing!");
             playerHealth.currentHealth += healthKitValue;
             Destroy(gameObject);
 

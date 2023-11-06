@@ -116,18 +116,19 @@ public class ForestFire3D : MonoBehaviour
                 xC = UnityEngine.Random.Range(0, 100); // generate a random number between 0 and 100
 
                 if (xC < rockChance) // if the random value is less than rock chance, assign cell as rock
-                {                   
+                {
                     forestFireCells[xCount, yCount].SetRock();
+                }
+                else if (xC < healthKitChance) // if the random value is less than healthkit chance, assign cell as healthkit material and add healthkit prefab
+                {
+                    forestFireCells[xCount, yCount].SetHealthKit();
                 }
                 else if (xC < grassChance) // if the random value is less than grass chance, assign cell as grass and set cell fuel
                 {
                     forestFireCells[xCount, yCount].SetGrass();
                     forestFireCells[xCount, yCount].cellFuel = UnityEngine.Random.Range(1, 5);
                 }
-                else if (xC < healthKitChance) // if the random value is less than healthkit chance, assign cell as healthkit material and add healthkit prefab
-                {
-                    forestFireCells[xCount, yCount].SetHealthKit();
-                }
+
                 else // if the random value is higher than rock and grass chance, assign as tree and set cell fuel
                 {
                     forestFireCells[xCount, yCount].SetTree();

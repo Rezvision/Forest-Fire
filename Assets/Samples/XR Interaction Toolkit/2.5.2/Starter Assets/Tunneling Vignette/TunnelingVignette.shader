@@ -4,7 +4,7 @@ Shader "VR/TunnelingVignette"
     {
         _ApertureSize("Aperture Size", Range(0, 1)) = 0.7
         _FeatheringEffect("Feathering Effect", Range(0, 1)) = 0.2
-        _VignetteColor("Vignette Color", Color) = (0, 0, 0, 1)
+        _VignetteColor("Vignette Color", Color) = (0, 1, 0, 0.2)
         _VignetteColorBlend("Vignette Color Blend", Color) = (0, 0, 0, 1)
     }
         SubShader

@@ -2606,7 +2606,7 @@
             "id": "dfad678c-5e72-4d39-aa36-2ce0cff054d9",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "foamTrigger",
                     "type": "Button",
                     "id": "788c2efb-19a6-4c27-a637-b9bb061d24cb",
                     "expectedControlType": "Button",
@@ -2622,8 +2622,30 @@
                     "path": "<XRController>{RightHand}/{TriggerButton}",
                     "interactions": "Hold",
                     "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "foamTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fac0b977-8d81-4856-a7cc-6261a43de68f",
+                    "path": "<Keyboard>/#(F)",
+                    "interactions": "",
+                    "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "foamTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e4e8d80-6992-45aa-a160-499537ba782d",
+                    "path": "<OculusTouchController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "foamTrigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
