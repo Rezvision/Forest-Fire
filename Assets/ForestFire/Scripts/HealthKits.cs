@@ -2,36 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class HealthKits : MonoBehaviour
 {
-    private PlayerHealth playerHealth;
+
+
+    private PlayerHealth playerHealth; //script
     //private ForestFireCell healthKit;
     //private GameObject healthKit;
-    public float healthKitValue;
+    public float healthKitValue; // customisable damage value for each colour
     private AudioSource healthSound;
+   
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        healthSound = GameObject.FindGameObjectWithTag("Healthkit").GetComponent<AudioSource>();
-            //this.GetComponent<AudioSource>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>(); // setting player health script
+        healthSound = GameObject.FindGameObjectWithTag("Healthkit").GetComponent<AudioSource>(); // setting healthkit pickup sound
+       
+        //this.GetComponent<AudioSource>();
         //healthKit = GameObject.FindGameObjectsWithTag("Healthkit");
     }
 
-    // Update is called once per frame
-    void Update()
+  
+
+
+    public void OnTriggerEnter(Collider other) // detecting when player goes through fire-effects' collider
     {
-        
-    }
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && playerHealth.currentHealth <= 100)
         {
+            playerHealth.OnHealthPickUp(healthKitValue);
             healthSound.Play();
             Debug.Log("sound playing!");
-            playerHealth.currentHealth += healthKitValue;
+          
             Destroy(gameObject);
+
 
             Debug.Log("The player current health is" + playerHealth.currentHealth);
         }
@@ -39,6 +46,6 @@ public class HealthKits : MonoBehaviour
         {
             Debug.Log("Not the player");
         }
-        
+
     }
 }

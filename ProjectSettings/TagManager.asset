@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ignite
+  - Healthkit
+  - fire
+  - sun
+  - healthkitCol
+  - damageCol
   layers:
   - Default
   - TransparentFX

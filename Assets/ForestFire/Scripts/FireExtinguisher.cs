@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class FireExtinguisher : MonoBehaviour
 {
-    public InputActionReference foamTrigger; 
+    public InputActionReference foamTrigger;
     //var leftHandDevices = new UnityEngine.XR.InputDevice();
     //UnityEngine.XR.InputDevice.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
     //UnityEngine.XR.InputDevice.left
@@ -70,36 +70,37 @@ public class FireExtinguisher : MonoBehaviour
             //}
         }
     }
-    void StopExtinguishing() 
+    void StopExtinguishing()
     {
-        if (foamParticles != null) 
+        if (foamParticles != null)
         {
             foamParticles.Stop();
         }
     }
     private void OnParticleCollision(GameObject other)
+    {
+        if (other.tag == "fire")
         {
-            if (other.tag == "fire")
-            {
-                GameObject currentFireObject = other.gameObject;
-                Debug.Log("setting the game object");
-                ForestFireCell cell = currentFireObject.GetComponent<ForestFireCell>();
-                Debug.Log("setting the script");
-                cell.SetBurnt();
-            }
-            //if ( other == fireEffect[0] || fireEffect[1])
-            //{
-            //    Destroy(fireEffect[0]); // Destroy the fire object when hit by extinguisher particles.
-            //    Destroy(fireEffect[0]);
-            //}
-            //if (other == fireEffect[0])
-            //{
-            //    Destroy(fireEffect[0]); // Destroy the fire object when hit by extinguisher particles.
-
-            //}
-            //if (other == fireEffect[1])
-            //{
-            //    Destroy(fireEffect[1]); // Destroy the fire object when hit by extinguisher particles.
-            //}
+            Debug.Log("particle touched fire");
+            GameObject currentFireObject = other.gameObject;
+            Debug.Log("setting the game object");
+            ForestFireCell cell = currentFireObject.GetComponent<ForestFireCell>();
+            Debug.Log("setting the script to forest fire cell");
+            cell.SetBurnt();
         }
+        //if ( other == fireEffect[0] || fireEffect[1])
+        //{
+        //    Destroy(fireEffect[0]); // Destroy the fire object when hit by extinguisher particles.
+        //    Destroy(fireEffect[0]);
+        //}
+        //if (other == fireEffect[0])
+        //{
+        //    Destroy(fireEffect[0]); // Destroy the fire object when hit by extinguisher particles.
+
+        //}
+        //if (other == fireEffect[1])
+        //{
+        //    Destroy(fireEffect[1]); // Destroy the fire object when hit by extinguisher particles.
+        //}
+    }
 }
