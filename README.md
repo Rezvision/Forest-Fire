@@ -1,5 +1,7 @@
 # Forest-Fire-Fighter-VR
 Forking Forest-Fire repo for assignment 3
+![Health bar and fire etinguisher](https://github.com/Rezvision/Forest-Fire/assets/147525543/c5705162-2aff-4e1f-9a1d-5d160acd5c7e)
+
 
 #Table of Contents
 Project Title
