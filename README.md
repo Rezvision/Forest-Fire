@@ -1,35 +1,29 @@
 # Forest-Fire-Fighter-VR
-Forking Forest-Fire repo for assignment 3
 ![Health bar and fire etinguisher](https://github.com/Rezvision/Forest-Fire/assets/147525543/c5705162-2aff-4e1f-9a1d-5d160acd5c7e)
 
 
-#Table of Contents
-Project Title
 #Description
-Put off fire with your fire extinguisher. There a day and night system.
+Put off the fire with your fire extinguisher. 
+
 #Getting Started
+Just download it and open it in Unity. There is a build version where you can play the game without any extra software.
+
 #Prerequisites
-#Installation
-#Usage
-#Features
+PLayable with VR. Triggers are general XR controllers.
+Can not be played with the keyboard.
 
-License
-Acknowledgments
-Description
-Describe your Unity VR game. What's the game about, what's the objective, and what makes it unique? Mention any technologies, libraries, or assets used in the project.
-
-Getting Started
-Explain how to get your game up and running on a user's system.
-
-Prerequisites
-List any software, hardware, or external dependencies necessary for running the game.
+#Assets:
+Fire Extinguisher by KrazyFX
+First-Aid Set by GEEKAY 3D
 
 Installation
 Provide detailed installation instructions for your VR game. Include steps to download the project, import it into Unity, configure any settings, or install any required assets.
 
 Usage
-Explain how to use your VR game. Include instructions on how to navigate the VR environment, how to interact with objects, and any specific controls or mechanics. You can include screenshots or videos to illustrate the gameplay.
+The left-hand controller joystick is used for movement and the right-hand controller is used for turning and teleportation. Press the right-hand trigger to fire the foam from the fire extinguisher, Standing near the fire will cause damage health kits can be picked up for healing. 
 
 Features
-List the main features of your Unity VR game. What makes it enjoyable and engaging for players? Highlight any unique mechanics or gameplay elements.
-
+Day and Night system using Realtime Directional Light
+Customisable Health System with Audio and Visual Cues For Accessibility Concerns
+Fire Extinguisher Shooting Foam
+Game Over UI with Exit and Replay Button
