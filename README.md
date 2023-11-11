@@ -35,10 +35,10 @@ The left-hand controller joystick is used for movement and the right-hand contro
 
 **Features**
 
-Day and Night system using Realtime Directional Light
-Customisable Health System with Audio and Visual Cues For Accessibility Concerns
-Fire Extinguisher Shooting Foam
-Game Over UI with Exit and Replay Button
+Day and Night system using Realtime Directional Light | 
+Customisable Health System with Audio and Visual Cues For Accessibility Concerns |
+Fire Extinguisher Shooting Foam |
+Game Over UI with Exit and Replay Button |
 
 **YouTube Link**
 [Forest-Fire-Fighter](https://youtu.be/uvTd7VONOYM)
