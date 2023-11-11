@@ -34,6 +34,7 @@ Provide detailed installation instructions for your VR game. Include steps to do
 The left-hand controller joystick is used for movement and the right-hand controller is used for turning and teleportation. Press the right-hand trigger to fire the foam from the fire extinguisher, Standing near the fire will cause damage health kits can be picked up for healing. 
 
 **Features**
+
 Day and Night system using Realtime Directional Light
 Customisable Health System with Audio and Visual Cues For Accessibility Concerns
 Fire Extinguisher Shooting Foam
