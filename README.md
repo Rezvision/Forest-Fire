@@ -20,8 +20,8 @@ Can not be played with the keyboard.
 
 **Assets**
 
-Fire Extinguisher by KrazyFX|
-First-Aid Set by GEEKAY 3D
+Fire Extinguisher by KrazyFX |
+ First-Aid Set by GEEKAY 3D
 
 
 **Installation**
