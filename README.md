@@ -4,12 +4,16 @@
 
 **Description**
 
-Put off the fire with your fire extinguisher. 
+Put off the fire with your fire extinguisher. Avoid the Fire to not take damage. Take health kits to heal and respawn flowers
 
+**Unity Version**
+
+2022f.
 
 **Getting Started**
 
-Just download it and open it in Unity. There is a build version where you can play the game without any extra software.
+Just download it and open it in Unity.
+All assets should be already imported. There is a build version where you can play the game without any extra software.
 
 
 **Prerequisites**
@@ -41,4 +45,5 @@ Fire Extinguisher Shooting Foam |
 Game Over UI with Exit and Replay Button |
 
 **YouTube Link**
+Click on the link for a quick gameplay 
 [Forest-Fire-Fighter](https://youtu.be/uvTd7VONOYM)
