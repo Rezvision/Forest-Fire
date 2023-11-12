@@ -8,7 +8,7 @@ Put off the fire with your fire extinguisher. Avoid the Fire to not take damage.
 
 **Unity Version**
 
-2022f.
+2022.3.11f1
 
 **Getting Started**
 
@@ -19,13 +19,14 @@ All assets should be already imported. There is a build version where you can pl
 **Prerequisites**
 
 PLayable with VR. Triggers are general XR controllers.
-Can not be played with the keyboard.
+Cannot be played with the keyboard in this current version.
 
 
 **Assets**
 
 Fire Extinguisher by KrazyFX |
- First-Aid Set by GEEKAY 3D
+ First-Aid Set by GEEKAY 3D  |
+ Lowpoly Flowers pack by chlyang
 
 
 **Installation**
