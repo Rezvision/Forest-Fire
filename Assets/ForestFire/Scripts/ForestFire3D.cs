@@ -346,7 +346,7 @@ public class ForestFire3D : MonoBehaviour
                 {
                     forestFireCells[xCount, yCount].SetTree();
                 }
-                else if (forestFireCells[xCount, yCount].cellState == ForestFireCell.State.Healthkit) // adding healthkit state as a cell
+                else if (forestFireCells[xCount, yCount].cellState == ForestFireCell.State.Healthkit) // adding healthkit state 
                 {
                     forestFireCells[xCount, yCount].SetHealthKit();
                 }

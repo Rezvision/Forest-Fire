@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // this class creates a mini map which is attached to the players left arm. 
 // the code is similar to the ForestFire2D script, a grid of 2D sprites is created which represent each cell
 // the state of each cell updated in the Update function via a reference to the ForestFire3D object
 public class MiniMap : MonoBehaviour
 {
+    public InputActionReference mapTrigger;
     public ForestFire3D forestFire3D; // reference to the main forest fire 3D script
 
     public GameObject cellSprite; // sprite used to represent a cell on the grid
@@ -73,6 +75,10 @@ public class MiniMap : MonoBehaviour
                 }
                 else if (forestFire3D.forestFireCells[xCount, yCount].cellState == ForestFireCell.State.Tree) 
                 {
+                    cellSpriteRenderers[xCount, yCount].color = Color.blue;
+                }
+                else if (forestFire3D.forestFireCells[xCount, yCount].cellState == ForestFireCell.State.Healthkit) // added health kit as a state
+                {
                     cellSpriteRenderers[xCount, yCount].color = Color.green;
                 }
                 else // something has gone wrong, display an error message
@@ -81,5 +87,14 @@ public class MiniMap : MonoBehaviour
                 }
             }
         }
+        if (mapTrigger.action.IsPressed()) 
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        { 
+            gameObject.SetActive(false);
+        }
     }
+    
 }

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8223003966970915698}
   - component: {fileID: 803851393574988262}
   - component: {fileID: 2744580700219646262}
-  m_Layer: 0
+  - component: {fileID: 8212693805293982499}
+  m_Layer: 6
   m_Name: Fire VFX
   m_TagString: fire
   m_Icon: {fileID: 0}
@@ -30,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 4754294210375399161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.69, z: 0}
+  m_LocalScale: {x: 1, y: 2.4259, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,10 +131,10 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 2}
+  m_Size: {x: 4, y: 10, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &803851393574988262
 MonoBehaviour:
@@ -148,7 +149,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue: 10
-  damageFilter: {fileID: 0}
+  flowerPrefabs:
+  - {fileID: 100000, guid: da1981c3ee8ea7e4186a753e15495628, type: 3}
+  - {fileID: 100000, guid: 41ba2a6f1d128f94eba95e5213a81254, type: 3}
+  - {fileID: 100000, guid: b332dc24cbb08144da2f112f82406700, type: 3}
+  - {fileID: 100000, guid: 821158ae724ce854e920539f935295b8, type: 3}
+  - {fileID: 100000, guid: f1c3f8e347f55f44e98e7ea73efac66e, type: 3}
+  - {fileID: 100000, guid: ab34fd65b601dab41915f4e874408d28, type: 3}
+  - {fileID: 100000, guid: f74defbe1b9a23449aef9a881263fe0c, type: 3}
 --- !u!82 &2744580700219646262
 AudioSource:
   m_ObjectHideFlags: 0
@@ -245,3 +253,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &8212693805293982499
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754294210375399161}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4189514412694937182, guid: be3083a5f26d4e859d594ecbe632f87e, type: 3}

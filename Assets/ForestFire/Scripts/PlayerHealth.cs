@@ -72,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
             if (timer >= displayTime)
             {
                 damageFilter.enabled = false; // image component turned off
-                shouldDisplayDamageImage = false; // so the image is not diplayed all the time and ready for next time a health kit is picked up
+                shouldDisplayDamageImage = false; // so the image is not diplayed all the time and ready for next time the player is damaged
                 timer = 0.0f;
             }
         }
@@ -81,7 +81,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnHealthPickUp(float healthkitValue) // healthkit increasing health and showing a green effect on the screen
     {
-        currentHealth += healthkitValue;
+        if (currentHealth + healthkitValue <= maxHealth) // only take health if the health won't go over max health
+        {
+        currentHealth += healthkitValue; 
+        }
+        else
+        {
+            currentHealth = maxHealth;// player's health cannot be more than 100
+        }
         shouldDisplayImage = true;
         Debug.Log("green image shown");
     }

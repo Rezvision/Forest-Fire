@@ -8,9 +8,9 @@ public class Instantiator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var position = new Vector3(Random.Range(0.0f, 155.0f), 0, Random.Range(0.0f, 155.0f));
         for (int i = 0; i < healthKitPrefabs.Length; i++) 
         {
+            var position = new Vector3(Random.Range(0.0f, 155.0f), 0, Random.Range(0.0f, 155.0f));
             Instantiate(healthKitPrefabs[i], position, Quaternion.identity);
         }
     }

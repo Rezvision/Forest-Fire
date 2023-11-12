@@ -2656,7 +2656,7 @@
             "id": "3367c91b-d579-479a-92b0-921b2703d306",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Apear",
                     "type": "Button",
                     "id": "2a3e39b7-ef6b-4e3d-a299-f8be9f7590ce",
                     "expectedControlType": "Button",
@@ -2673,7 +2673,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Apear",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "696e15c0-55a8-4df8-95d3-4fb5e3cdad60",
+                    "path": "<OculusTouchController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Apear",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -120,6 +120,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthKitValue: 50
+  flowerPrefabs:
+  - {fileID: 100000, guid: f74defbe1b9a23449aef9a881263fe0c, type: 3}
+  - {fileID: 100000, guid: ab34fd65b601dab41915f4e874408d28, type: 3}
+  - {fileID: 100000, guid: f1c3f8e347f55f44e98e7ea73efac66e, type: 3}
+  - {fileID: 100000, guid: 821158ae724ce854e920539f935295b8, type: 3}
+  - {fileID: 100000, guid: b332dc24cbb08144da2f112f82406700, type: 3}
+  - {fileID: 100000, guid: 41ba2a6f1d128f94eba95e5213a81254, type: 3}
+  - {fileID: 100000, guid: da1981c3ee8ea7e4186a753e15495628, type: 3}
 --- !u!82 &-4115648661447629611
 AudioSource:
   m_ObjectHideFlags: 0

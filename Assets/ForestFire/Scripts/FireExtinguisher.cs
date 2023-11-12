@@ -15,15 +15,16 @@ public class FireExtinguisher : MonoBehaviour
     //UnityEngine.XR.InputDevice device = leftHandDevices[0];
 
 
-
+    //public LayerMask fireLayer;
     //private XRController xrController;
     public ParticleSystem foamParticles;
-    public GameObject[] fireEffect;
+    //public GameObject[] flowerPrefabs;
+    //public GameObject[] fireEffect;
     // Start is called before the first frame update
     private void Start()
     {
         //fireEffect = GameObject.FindGameObjectsWithTag("fire");
-        fireEffect = GameObject.FindGameObjectsWithTag("fire");
+
 
         //xrController = GetComponent<XRController>();
     }
@@ -34,7 +35,7 @@ public class FireExtinguisher : MonoBehaviour
         if (foamTrigger.action.IsPressed())
         {
             StartExtinguishing();
-            Debug.Log("particles started spraying");
+            // Debug.Log("particles started spraying");
 
         }
         else
@@ -77,6 +78,41 @@ public class FireExtinguisher : MonoBehaviour
             foamParticles.Stop();
         }
     }
+    //void OnParticleCollision(GameObject other)
+    //{
+    //    // Check if the collision involves an object on the fireLayer
+    //    if (fireLayer == (fireLayer | (1 << other.layer)))
+    //    {
+    //        // Handle the collision with fire (e.g., extinguish the fire)
+    //        ExtinguishFire(other);
+    //    }
+    //}
+
+    //void ExtinguishFire(GameObject fireObject)
+    //{
+    //    // Implement logic to extinguish the fire, e.g., disable the fireObject
+    //    fireObject.SetActive(false);
+    //    if (flowerPrefabs.Length > 0)
+    //    {
+    //        int _randomNumber = Random.Range(0, flowerPrefabs.Length);
+    //        Instantiate(flowerPrefabs[_randomNumber], fireObject.transform.position, Quaternion.identity);
+    //    }
+    //}
+    //private void OnParticleCollision(GameObject other)
+    //{
+    //    if (other.CompareTag("Fire"))
+    //    {
+    //        // Instantiate the half-burnt effect at the collision point.
+    //        int _randomNumber = Random.Range(0, flowerPrefabs.Length);
+    //        Instantiate(flowerPrefabs[_randomNumber], other.transform.position, Quaternion.identity);
+
+    //        // Add additional logic if needed, such as reducing the intensity of the fire.
+    //        // You can access the Fire script (if there is one) and modify its properties.
+
+    //        // Destroy the original fire object.
+    //        Destroy(other);
+    //    }
+    //}
     private void OnParticleCollision(GameObject other)
     {
         if (other.tag == "fire")
@@ -86,21 +122,25 @@ public class FireExtinguisher : MonoBehaviour
             Debug.Log("setting the game object");
             ForestFireCell cell = currentFireObject.GetComponent<ForestFireCell>();
             Debug.Log("setting the script to forest fire cell");
-            cell.SetBurnt();
+            if (cell.cellState == ForestFireCell.State.Alight) 
+            {
+            cell.SetBurnt(); // turning off the fire
+            }
         }
-        //if ( other == fireEffect[0] || fireEffect[1])
-        //{
-        //    Destroy(fireEffect[0]); // Destroy the fire object when hit by extinguisher particles.
-        //    Destroy(fireEffect[0]);
-        //}
-        //if (other == fireEffect[0])
-        //{
-        //    Destroy(fireEffect[0]); // Destroy the fire object when hit by extinguisher particles.
+       
+                    //if ( other == fireEffect[0] || fireEffect[1])
+                    //{
+                    //    Destroy(fireEffect[0]); // Destroy the fire object when hit by extinguisher particles.
+                    //    Destroy(fireEffect[0]);
+                    //}
+                    //if (other == fireEffect[0])
+                    //{
+                    //    Destroy(fireEffect[0]); // Destroy the fire object when hit by extinguisher particles.
 
-        //}
-        //if (other == fireEffect[1])
-        //{
-        //    Destroy(fireEffect[1]); // Destroy the fire object when hit by extinguisher particles.
-        //}
-    }
+                    //}
+                    //if (other == fireEffect[1])
+                    //{
+                    //    Destroy(fireEffect[1]); // Destroy the fire object when hit by extinguisher particles.
+                    //}
+                }
 }

@@ -3,7 +3,13 @@ guid: d29d9229efe64ce4c8f9114336a1037b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mapTrigger: {fileID: 7610674567038572644, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  - forestFire3D: {instanceID: 0}
+  - cellSprite: {fileID: 9176203362394045872, guid: be30b92be59bc5046adbe962d7c6d3a8,
+      type: 3}
+  - spawnPosition: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
